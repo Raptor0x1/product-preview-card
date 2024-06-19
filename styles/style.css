@@ -1,0 +1,45 @@
+:root {
+  --background-color: hsl(30, 38%, 92%);
+}
+
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 40vw;
+    display: flex;
+
+}
+
+.hero-img picture {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+img {
+    width: 100%;
+}
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: 2.5rem;
+    background-color: white;
+}
+
