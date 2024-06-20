@@ -1,8 +1,16 @@
 :root {
-  --background-color: hsl(30, 38%, 92%);
+  --body-color: hsl(30, 38%, 92%);
+  --white-color: hsl(0, 0%, 100%);
+  --price-color: hsl(158, 36%, 37%);
+  --hover-color: hsl(156, 41%, 18%);
+  --greyish-blue: hsl(228, 12%, 48%);
+  --dark-blue: hsl(212, 21%, 14%);
+  --ff-heading: "Fraunces", sans-serif;
+  --ff-para: "Montserrat", serif;
+
 }
 
-*, ::before, ::after {
+*, *::before, *::after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -16,30 +24,125 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--background-color);
+    background-color: var(--body-color);
 }
 
 .container {
-    max-width: 40vw;
+    max-width: 25rem;
     display: flex;
+    flex-direction: column;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-color: var(--white-color);
 
 }
 
-.hero-img picture {
+.hero-img {
     width: 100%;
-    height: auto;
+}
+
+.hero-img img {
+    width: 100%;
     display: block;
 }
 
-img {
-    width: 100%;
-}
 .description {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-    padding: 2.5rem;
-    background-color: white;
+    padding: 2rem;
+    background-color: var(--white-color);
 }
 
+.title span {
+    display: inline-block;
+    font-family: var(--ff-para);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    color: var(--greyish-blue);
+}
+
+.title h1 {
+    font-family: var(--ff-heading);
+    line-height: 1;
+    font-size: 2.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.title p {
+    font-family: var(--ff-para);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    color: var(--dark-blue);
+}
+
+.price {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.price h1{
+    font-family: var(--ff-heading);
+    color: var(--price-color);
+    font-weight: 700;
+    font-size: 2.5rem;
+} 
+
+.price span {
+    font-family: var(--ff-para);
+    font-size: 0.85rem;
+    align-self: center;
+    text-decoration: line-through;
+    color: hsl(212, 21%, 14%);
+}
+
+.button {
+    background-color: var(--price-color);
+    color: var(--white-color);
+    padding: 1rem;
+    font-family: var(--ff-para);
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    
+}
+.button a {
+    text-decoration: none;
+    color: var(--white-color);
+}
+
+.button img {
+    padding-right: 0.5rem;
+}
+.button span {
+    font-weight: 700;
+}
+
+@media (min-width: 64.25rem) {
+    .container {
+        flex-direction: row;
+        max-width: 42rem;
+    
+    }
+
+    .hero-img img {
+        height: 100%;
+    }
+
+    .description {
+       max-width: 50%;
+    }
+
+    .price {
+        margin-bottom: 2rem;
+    }
+
+    .button:hover {
+        background-color: var(--hover-color);
+    } 
+}
